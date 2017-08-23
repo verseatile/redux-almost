@@ -1,0 +1,13 @@
+- interface to add color codes and others ('padding, ')
+- no need for a full interface 
+- managed by front end
+- brand guidelines
+- avoid use of grabbing inspector, should be tested and used as grail
+- responsive
+- padding
+- colors, typography, buttons, links, forms,
+- downloads for logos, press kit
+- [leave editing features for storybook, or future release]
+- confluence, jira, google docs
+- header
+- 
