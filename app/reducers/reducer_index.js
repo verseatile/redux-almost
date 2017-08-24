@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux'
-import TodosReducer from './reducer_todos'
-import AddUserReducer from './reducer_todos_filter'
+import AddUserReducer from './reducer_todos'
 
 /**
  * This file combines multiple reducers.
@@ -13,8 +12,7 @@ import AddUserReducer from './reducer_todos_filter'
  * aka state.prop1
  */
 const rootReducer = combineReducers({
-  todos: TodosReducer,
-  addEm: AddUserReducer,
+  todos: AddUserReducer,
   init: []
 })
 

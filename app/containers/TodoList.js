@@ -14,14 +14,7 @@ class TodoList extends Component {
     renderList() { // since this is iterating, the todo is a single item from the overall array
         return this.props.todos.map((todo, i) => {
           return (
-            // <li
-            //   key={todo.name}
-            //   /* on click, dispatch the ADD_TODO action */
-            //   // onClick={() => this.props.addTodo(todo)}
-            // > 
-            //   {todo.name}
-            // </li>
-            <Todo key={i} pass={this.props.todos}/>
+            <Todo key={i} value={todo}/>
           )
         })
       }
@@ -29,10 +22,14 @@ class TodoList extends Component {
     render() {
         return(
             <div>
+            <h3 onClick={() => this.props.addTodo({name: "a new challenger appeared"})}>
+            ADD ME
+            </h3>
             {/* <input onChange={ (event) => this.setState({ input: event.target.value }) } type="text" />
         {console.log(this.state.input)} */}
                 <ul>
-                    {this.renderList()}
+                    {/*this.renderList()*/}
+                    <Todo  />
                 </ul>
             </div>
         )

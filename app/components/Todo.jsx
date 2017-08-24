@@ -12,7 +12,7 @@ class Todo extends Component {
     }
 
     renderRedux() {
-        return this.props.piece.map((dataObj, i) => {
+        return this.props.todos.map((dataObj, i) => {
             return (<h1 style={{paddingLeft: '20%'}}>{`#`}{i + 1}{`: `}{dataObj.text}</h1>)
         }
     )
@@ -21,8 +21,8 @@ class Todo extends Component {
 
     render() {
         return(
-            <li
-            /* on click, dispatch the ADD_TODO action
+            <li>
+            {/* on click, dispatch the ADD_TODO action
             *
             * IMPORTANT!!!!!!!!!!!!!!!! -------------
             *
@@ -30,16 +30,11 @@ class Todo extends Component {
             * AND
             * pass in input event data into the object that is going into the addTodo() action creator
             *
-            */
-            onClick={() => this.props.addTodo({name: "a new challenger appeared"})}
-            >
+            THIS.PROPS.VALUE IS A TODO OBJECT
+        */}
             
             
-
-
-
-            {this.props.pass[0].name} {/* shown to users */}
-
+            {/* shown to users */}
             {this.renderRedux()}
         </li>
         )
@@ -56,8 +51,10 @@ class Todo extends Component {
 // binds/maps state to props
 function mapStateToProps(state) {
     // whatever is returned will show up as props in Todo
+    // the key is the prop, the value is the state it is being linked to
+    // property: state.stateProp
     return {
-      piece: state.addEm
+      todos: state.todos
     }
 }
 
