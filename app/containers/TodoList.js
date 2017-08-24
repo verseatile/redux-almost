@@ -55,10 +55,10 @@ function mapStateToProps(state) {
     }
   }
   
-  //map action dispatch to a property??
+  // binds/maps state to props
   function mapDispatchToProps(dispatch) {
     // ?? 
-    // could possibly just throw the action creator inside
+    // binds 
     return bindActionCreators({ addTodo }, dispatch)
   }
   

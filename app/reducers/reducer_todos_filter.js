@@ -1,8 +1,3 @@
-const initState = [
-    {
-        name: "init state!"
-    }
-]
 
 export default function(state=[], action) { // take in old state
     switch(action.type) {
@@ -14,35 +9,18 @@ export default function(state=[], action) { // take in old state
              * return the contents of state(current todos), AND an object with the new additional todo
              */
             return [
-                ...state,
-                {
+                ...state,// return the current state and....the action object
+                { // this is the action object. its data is here
                     id: action.id,
                     text: action.item.name,
                     completed: false
                 }
             ]
-        case 'TOGGLE_TODO': //complete work in progress, probably doesnt work
-            return state.map(todo =>
-                (todo.id === action.id)
-                  ? {todo, completed: !todo.completed}
-                  : todo
-            )
+            default:
+                return state
 
-        // case 'PUSH_INPUT':
-        //     return [
-        //         ...state,
-        //         {
-        //             state.'object with input'
-        //         }
-        //     ]
-
-        default:
-            return state
-            
-            // action.item;
-            // break;
     }
-    return state // return new state
+    //return state // return new state
 }
 
 
