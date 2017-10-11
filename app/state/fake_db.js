@@ -1,6 +1,7 @@
-export default const fakeState = [
-    {
-        todo: "A single todo",
-        date: `${new Date()}`
-    }
-]
+const initState = {
+    todo: "A single todo",
+    date: `${new Date()}`
+}
+
+
+export default initState

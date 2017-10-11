@@ -1,8 +1,9 @@
 
 export default function(state=[], action) { // take in old state
+
     switch(action.type) {
-        case 'ADD_TODO':
-         console.log('this has been dispatched', action)
+        case 'ADD_MSG':
+         console.log('this action has been dispatched', action)
             //push new todo object into state array, but make state an array first
 
             /**
@@ -12,8 +13,8 @@ export default function(state=[], action) { // take in old state
                 ...state,// return the current state and....the action object
                 { // this is the action object. its data is here
                     id: action.id,
-                    text: action.item.name,
-                    completed: false
+                    text: action.msg,
+                    time: action.time
                 }
             ]
             default:

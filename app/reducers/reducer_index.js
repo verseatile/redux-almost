@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import AddUserReducer from './reducer_todos'
+import MessagesReducer from './reducer_messages'
 
 /**
  * This file combines multiple reducers.
@@ -12,7 +12,7 @@ import AddUserReducer from './reducer_todos'
  * aka state.prop1
  */
 const rootReducer = combineReducers({
-  todos: AddUserReducer,
+  messages: MessagesReducer,
   init: []
 })
 

@@ -8,12 +8,13 @@
 let nextTodoId = 0
 
 // actions arent anything but objects!
-export const addTodo = item => {
-  console.log(`ADD TODO action dispatched. CONTENT: ${item.name}`)
+export const addMsg = buff => {
+  console.log(`new msg added. contents: ${buff}`)
   return {
-    type: 'ADD_TODO',
+    type: 'ADD_MSG',
     id: nextTodoId++,
-    item  //this represents the content/payload
+    msg: buff, //this represents the content/payload
+    time: new Date().toTimeString()
   }
 }
 

@@ -6,14 +6,14 @@ import React from 'react'
 import { render } from 'react-dom'
 import App from './components/App'
 import './styles/main.css'
-import todoApp from './reducers/reducer_index'
+import msg_app from './reducers/reducer_index'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 console.log('its webpack bruh')
 
 //this function basically just creates an object...that is your state...the arg is that object
-let store = createStore(todoApp) // creates the store, places reducer index inside
+let store = createStore(msg_app) // creates the store, places reducer index inside
 
 store.subscribe(() => console.log(store.getState())) // for every update, return the state to the console
 
