@@ -14,6 +14,8 @@ const server = net.createServer((socket) => {
 
    clients = [...clients, socket]
 
+   socket.destroyed ? console.log("Socked has been destroyed...was this intended?") : "socket is not destroyed..no need for this message"
+
 
 
     // socket.on('connect', () => {
