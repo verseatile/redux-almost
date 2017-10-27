@@ -10,7 +10,7 @@ const server = net.createServer((socket) => {
 
    // Welcome messaging
    socket.write('Welcome ' + socket.name + " !\n")
-   broadcast(`${socket.name} has joined the room`)
+   broadcast(`${socket.name} has joined the room\n`)
 
    clients = [...clients, socket]
 
@@ -27,26 +27,33 @@ const server = net.createServer((socket) => {
         broadcast(`${socket.name}>: ${data}`, socket ) //when data comes into the server, send to all users
     })
 
-    socket.on('error', () => {
-        console.log('an error has occurred.')
+    socket.on('error', (err) => {
+        console.log('\x1b[31m\ ', err, "\x1b[0m")
     })
 
     socket.on('end', () => {
         broadcast(`{$socket.name}> has left the room`)
     })
 
-    var broadcast = (message, sender) => {
-        //for each in set of sockets, emit this message
-        clients.map((client) => {
-            if (client !== sender) { //dont send to sender
-                client.write(message)
-            }
-        })
-        process.stdout.write(message) // log to server output
-    }
 
 }).listen(PORT, () => console.log(`[  Listening on ${PORT}  ]`))
 
-server.on('connection', () => {
-    console.log('a new user has connected!')
-})
+
+/* event listeners */
+
+// server.on('connection', () => {
+//     console.log('a new user has connected!')
+// })
+
+
+
+// methods
+var broadcast = (message, sender) => {
+    //for each in set of sockets, emit this message
+    clients.map((client) => {
+        if (client !== sender) { //dont send to sender
+            client.write(message)
+        }
+    })
+    process.stdout.write(message) // log to server output
+}

@@ -1,5 +1,5 @@
 {
-  "name": "shell",
+  "name": "redux-almost",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -12,7 +12,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "author": "",
+  "author": "OMD <glueshell@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.25.0",
@@ -34,5 +34,6 @@
   },
   "devDependencies": {
     "@storybook/react": "^3.2.4"
-  }
+  },
+  "repository": "https://github.com/verseatile/redux-almost"
 }

@@ -47,7 +47,25 @@ export default class App extends Component {
   }
 
 
+  componentDidMount() {
+    var ws = new WebSocket("ws://localhost:3000");
 
+    console.log('ayo! we tryin to connect')
+    console.log(ws)
+    
+    ws.onopen = function()
+    {
+       // Web Socket is connected, send data using send()
+       console.log('socket successfully opened')
+    };
+
+    ws.onclose = function()
+    { 
+       // websocket is closed.
+      console.log('shit failed')
+    };
+
+  }
   
   render() {
     return (
